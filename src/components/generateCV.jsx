@@ -1,3 +1,5 @@
+import '../styles/cv.css'
+
 export default function GenerateCV({person}) {
   return (
     <div className="generatedCV">
