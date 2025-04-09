@@ -15,6 +15,7 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
 
   return (
     <section className='personalInfo'>
+      <h2>Personal information</h2>
       <label>
         Name: 
         <input type='text' onChange={(e) => updateName(e.target.value)}/>

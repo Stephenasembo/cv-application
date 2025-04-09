@@ -3,6 +3,7 @@ import '../styles/education.css';
 export default function Education() {
   return (
     <section className='educationInfo'>
+      <h2>Educational information</h2>
       <label>
         School Name: 
         <input type='text'/>

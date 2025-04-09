@@ -9,3 +9,8 @@ section {
   padding: 1em;
   border: 1px solid grey;
 }
+
+h2 {
+  text-align: center;
+  margin: 0;
+}

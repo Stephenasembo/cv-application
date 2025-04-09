@@ -3,6 +3,7 @@ import '../styles/experience.css'
 export default function Experience() {
   return (
     <section className='experience'>
+      <h2>Practical Experience</h2>
       <label>
         Company Name: 
         <input type='text'/>
