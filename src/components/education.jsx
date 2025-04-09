@@ -7,8 +7,11 @@ export default function Education({educationInfo, updateEducationInfo}) {
   function updateTitle(newTitle) {
     updateEducationInfo({...educationInfo, studyTitle: newTitle});
   }
-  function updateDate(newDate) {
-    updateEducationInfo({...educationInfo, studyDate: newDate});
+  function updateStart(newDate) {
+    updateEducationInfo({...educationInfo, studyStartDate: newDate});
+  }
+  function updateEnd(newDate) {
+    updateEducationInfo({...educationInfo, studyEndDate: newDate});
   }
   return (
     <section className='educationInfo'>
@@ -21,10 +24,16 @@ export default function Education({educationInfo, updateEducationInfo}) {
         Title of Study: 
         <input type='text' onChange={(e) => updateTitle(e.target.value)}/>
       </label>
-      <label>
-        Date of Study: 
-        <input type='date' onChange={(e) => updateDate(e.target.value)}/>
-      </label>
+      <div className='studyDuration'>
+        <label>
+          Study Start Date: 
+          <input type='date' onChange={(e) => updateStart(e.target.value)}/>
+        </label>
+        <label className='end'>
+          Study End Date: 
+          <input type='date' onChange={(e) => updateEnd(e.target.value)}/>
+        </label>
+      </div>
     </section>
   )
 }

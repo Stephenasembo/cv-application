@@ -29,10 +29,16 @@ export default function Experience({experience, updateExperience}) {
         Main Responsibilities: 
         <input type='text' onChange={(e) => updateResponsibilities(e.target.value)}/>
       </label>
-      <label>
-        Duration: 
-        <input type='date' onChange={(e) => updateDuration(e.target.value)}/>
-      </label>
+      <div className='workDuration'>
+        <label>
+          Work Start Date
+          <input type='date' onChange={(e) => updateDuration(e.target.value)}/>
+        </label>
+        <label className='end'>
+          Work End Date
+          <input type='date' onChange={(e) => updateDuration(e.target.value)}/>
+        </label>
+      </div>
     </section>
   )
 }
