@@ -3,9 +3,20 @@ import '../styles/cv.css'
 export default function GenerateCV({person}) {
   return (
     <div className="generatedCV">
-      <h1>{person.name}</h1>
-      {person.phone !== '' && <p>Your phone number is: {person.phone}</p>}
-      {person.email !== '' && <p>Your email address is: {person.email}</p>}
+      <div>
+        <h1>{person.name}</h1>
+        {person.phone !== '' && <p>Your phone number is: {person.phone}</p>}
+        {person.email !== '' && <p>Your email address is: {person.email}</p>}
+      </div>
+      <div>
+        {(person.schoolName || person.studyTitle || person.studyDate)
+        && <h2>Education Background</h2>}
+        <div>
+          {person.schoolName && <p>Institution: {person.schoolName}</p>}
+          {person.studyTitle && <p>Title of Study: {person.studyTitle}</p>}
+          {person.studyDate && <p>Date of Study: {person.studyDate}</p>}
+        </div>
+      </div>
     </div>
   )
 }

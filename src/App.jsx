@@ -16,7 +16,7 @@ function App() {
     <>
       <div className='userInput'>
         <PersonalInfo infoObj={person} setInfoObj={setPerson} />
-        <Education />
+        <Education educationInfo={person} updateEducationInfo={setPerson}/>
         <Experience />
       </div>
       <GenerateCV person={person} />
