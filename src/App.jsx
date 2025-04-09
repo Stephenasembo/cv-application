@@ -14,9 +14,11 @@ function App() {
 
   return (
     <>
-      <PersonalInfo infoObj={person} setInfoObj={setPerson} />
-      <Education />
-      <Experience />
+      <div className='userInput'>
+        <PersonalInfo infoObj={person} setInfoObj={setPerson} />
+        <Education />
+        <Experience />
+      </div>
       <GenerateCV person={person} />
     </>
   )

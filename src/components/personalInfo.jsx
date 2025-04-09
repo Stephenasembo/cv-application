@@ -1,3 +1,5 @@
+import '../styles/personalInfo.css'
+
 export default function PersonalInfo({infoObj, setInfoObj}) {
   function updateName(newName) {
     setInfoObj({...infoObj, name: newName});
