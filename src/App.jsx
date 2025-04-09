@@ -1,72 +1,16 @@
-import './App.css'
+import './App.css';
+import PersonalInfo from './components/personalInfo';
+import Education from './components/education';
+import Experience from './components/experience';
 
 function App() {
   return (
     <>
+      <PersonalInfo />
+      <Education />
+      <Experience />
     </>
   )
 }
 
-function PersonalInfo() {
-  return (
-    <section className='personalInfo'>
-      <label>
-        Name: 
-        <input type='text'/>
-      </label>
-      <label>
-        Phone Number: 
-        <input type='tel'/>
-      </label>
-      <label>
-        Email Address: 
-        <input type='email'/>
-      </label>
-    </section>
-  )
-}
-
-function Education() {
-  return (
-    <section className='educationInfo'>
-      <label>
-        School Name: 
-        <input type='text'/>
-      </label>
-      <label>
-        Title of Study: 
-        <input type='text'/>
-      </label>
-      <label>
-        Date of Study: 
-        <input type='date'/>
-      </label>
-    </section>
-  )
-}
-
-function Experience() {
-  return (
-    <section className='experience'>
-      <label>
-        Company Name: 
-        <input type='text'/>
-      </label>
-      <label>
-        Position Title: 
-        <input type='text'/>
-      </label>
-      <label>
-        Main Responsibilities: 
-        <input type='text'/>
-      </label>
-      <label>
-        Duration: 
-        <input type='date'/>
-      </label>
-    </section>
-  )
-}
-
-
-export {App, PersonalInfo, Education, Experience};
+export default App;
