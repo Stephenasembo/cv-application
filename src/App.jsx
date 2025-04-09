@@ -15,9 +15,10 @@ function App() {
   return (
     <>
       <div className='userInput'>
+        <p>Please enter your details in the available fields</p>
         <PersonalInfo infoObj={person} setInfoObj={setPerson} />
         <Education educationInfo={person} updateEducationInfo={setPerson}/>
-        <Experience />
+        <Experience experience={person} updateExperience={setPerson}/>
       </div>
       <GenerateCV person={person} />
     </>

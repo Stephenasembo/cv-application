@@ -17,6 +17,16 @@ export default function GenerateCV({person}) {
           {person.studyDate && <p>Date of Study: {person.studyDate}</p>}
         </div>
       </div>
+      <div>
+        {(person.companyName || person.position || person.responsibilities || person.jobDuration)
+        && <h2>Work Experience</h2>}
+        <div>
+          {person.companyName && <p>Company: {person.companyName}</p>}
+          {person.position && <p>Position: {person.position}</p>}
+          {person.responsibilities && <p>Responsibilities Held: {person.responsibilities}</p>}
+          {person.jobDuration && <p>Work Duration: {person.jobDuration}</p>}
+        </div>
+      </div>
     </div>
   )
 }

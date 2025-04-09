@@ -1,7 +1,18 @@
+.userInput {
+  border: 1px solid black;
+}
+
+.userInput > p {
+  margin: 1em;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
 @media (min-width: 700px) {
   #root {
     display: grid;
     grid-template-columns: max-content 1fr;
+    gap: 1em;
   }
 }
 
