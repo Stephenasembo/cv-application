@@ -45,4 +45,28 @@ function Education() {
   )
 }
 
-export {App, PersonalInfo, Education};
+function Experience() {
+  return (
+    <section className='experience'>
+      <label>
+        Company Name: 
+        <input type='text'/>
+      </label>
+      <label>
+        Position Title: 
+        <input type='text'/>
+      </label>
+      <label>
+        Main Responsibilities: 
+        <input type='text'/>
+      </label>
+      <label>
+        Duration: 
+        <input type='date'/>
+      </label>
+    </section>
+  )
+}
+
+
+export {App, PersonalInfo, Education, Experience};
