@@ -1,4 +1,7 @@
-import '../styles/experience.css'
+import '../styles/experience.css';
+import EditDetails from './editDetails';
+import SubmitDetails from './submitDetails';
+
 
 export default function Experience({experience, updateExperience}) {
   function updateCompany(newCompany) {
@@ -41,6 +44,10 @@ export default function Experience({experience, updateExperience}) {
           Work End Date
           <input type='date' onChange={(e) => updateWorkEnd(e.target.value)}/>
         </label>
+      </div>
+      <div>
+        <SubmitDetails />
+        <EditDetails />
       </div>
     </section>
   )

@@ -1,4 +1,6 @@
 import '../styles/personalInfo.css'
+import EditDetails from './editDetails';
+import SubmitDetails from './submitDetails';
 
 export default function PersonalInfo({infoObj, setInfoObj}) {
   function updateName(newName) {
@@ -28,6 +30,10 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
         Email Address: 
         <input type='email' onChange={(e) => updateEmail(e.target.value)}/>
       </label>
+      <div>
+        <SubmitDetails />
+        <EditDetails />
+      </div>
     </section>
   )
 }

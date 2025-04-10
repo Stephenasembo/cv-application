@@ -1,4 +1,6 @@
 import '../styles/education.css';
+import EditDetails from './editDetails';
+import SubmitDetails from './submitDetails';
 
 export default function Education({educationInfo, updateEducationInfo}) {
   function updateSchool(newSchool) {
@@ -33,6 +35,10 @@ export default function Education({educationInfo, updateEducationInfo}) {
           Study End Date: 
           <input type='date' onChange={(e) => updateEnd(e.target.value)}/>
         </label>
+      </div>
+      <div>
+        <SubmitDetails />
+        <EditDetails />
       </div>
     </section>
   )
