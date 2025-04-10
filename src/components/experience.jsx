@@ -10,8 +10,11 @@ export default function Experience({experience, updateExperience}) {
   function updateResponsibilities(newResponsibilities) {
     updateExperience({...experience, responsibilities: newResponsibilities});
   }
-  function updateDuration(newDuration) {
-    updateExperience({...experience, jobDuration: newDuration});
+  function updateWorkStart(newDuration) {
+    updateExperience({...experience, workStart: newDuration});
+  }
+  function updateWorkEnd(newDuration) {
+    updateExperience({...experience, workEnd: newDuration});
   }
 
   return (
@@ -32,11 +35,11 @@ export default function Experience({experience, updateExperience}) {
       <div className='workDuration'>
         <label>
           Work Start Date
-          <input type='date' onChange={(e) => updateDuration(e.target.value)}/>
+          <input type='date' onChange={(e) => updateWorkStart(e.target.value)}/>
         </label>
         <label className='end'>
           Work End Date
-          <input type='date' onChange={(e) => updateDuration(e.target.value)}/>
+          <input type='date' onChange={(e) => updateWorkEnd(e.target.value)}/>
         </label>
       </div>
     </section>
