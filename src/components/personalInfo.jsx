@@ -1,4 +1,5 @@
-import '../styles/personalInfo.css'
+import '../styles/personalInfo.css';
+import Input from './input';
 import EditDetails from './editDetails';
 import SubmitDetails from './submitDetails';
 
@@ -20,15 +21,15 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
       <h2>Personal information</h2>
       <label>
         Name: 
-        <input type='text' onChange={(e) => updateName(e.target.value)}/>
+        <Input type='text' />
       </label>
       <label>
         Phone Number: 
-        <input type='tel'onChange={(e) => updatePhone(e.target.value)}/>
+        <Input type='tel' />
       </label>
       <label>
         Email Address: 
-        <input type='email' onChange={(e) => updateEmail(e.target.value)}/>
+        <Input type='email' />
       </label>
       <div>
         <SubmitDetails />
