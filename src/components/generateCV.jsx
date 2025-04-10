@@ -3,10 +3,10 @@ import '../styles/cv.css'
 export default function GenerateCV({person}) {
   return (
     <div className="generatedCV">
-      <div>
+      <div className='generatedPersonalInfo'>
         <h1>{person.name}</h1>
-        {person.phone !== '' && <p>Your phone number is: {person.phone}</p>}
-        {person.email !== '' && <p>Your email address is: {person.email}</p>}
+        {person.phone !== '' && <p>Phone number: {person.phone}</p>}
+        {person.email !== '' && <p>Email: {person.email}</p>}
       </div>
       <div>
         {(person.schoolName || person.studyTitle || person.studyStartDate || person.studyEndDate)
