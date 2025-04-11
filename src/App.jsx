@@ -6,11 +6,7 @@ import Experience from './components/experience';
 import GenerateCV from './components/generateCV';
 
 function App() {
-  const [person, setPerson] = useState({
-    name: '',
-    phone: '',
-    email: '',
-  });
+  const [person, setPerson] = useState({});
 
   return (
     <>

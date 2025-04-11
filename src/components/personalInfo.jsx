@@ -2,18 +2,14 @@ import '../styles/personalInfo.css';
 import Input from './input';
 import EditDetails from './editDetails';
 import SubmitDetails from './submitDetails';
+import { useState } from 'react';
 
 export default function PersonalInfo({infoObj, setInfoObj}) {
-  function updateName(newName) {
-    setInfoObj({...infoObj, name: newName});
-  }
+  const [personalInfoObj, setPersonalInfoObj] = useState({});
 
-  function updatePhone(newPhone) {
-    setInfoObj({...infoObj, phone: newPhone});
-  }
-
-  function updateEmail(newEmail) {
-    setInfoObj({...infoObj, email: newEmail});
+  // Update the person object with personal details
+  function updateInfo() {
+    setInfoObj({...infoObj, ...personalInfoObj});
   }
 
   return (
@@ -21,18 +17,18 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
       <h2>Personal information</h2>
       <label>
         Name: 
-        <Input type='text' />
+        <Input type='text' obj={personalInfoObj} property='name' updateObj={setPersonalInfoObj}/>
       </label>
       <label>
         Phone Number: 
-        <Input type='tel' />
+        <Input type='tel' obj={personalInfoObj} property='phone' updateObj={setPersonalInfoObj}/>
       </label>
       <label>
         Email Address: 
-        <Input type='email' />
+        <Input type='email' obj={personalInfoObj} property='email' updateObj={setPersonalInfoObj}/>
       </label>
       <div>
-        <SubmitDetails />
+        <SubmitDetails submitInfo={updateInfo}/>
         <EditDetails />
       </div>
     </section>

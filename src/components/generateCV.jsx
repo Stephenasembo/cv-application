@@ -5,8 +5,8 @@ export default function GenerateCV({person}) {
     <div className="generatedCV">
       <div className='generatedPersonalInfo'>
         <h1>{person.name}</h1>
-        {person.phone !== '' && <p>Phone number: {person.phone}</p>}
-        {person.email !== '' && <p>Email: {person.email}</p>}
+        {person.phone && <p>Phone number: {person.phone}</p>}
+        {person.email && <p>Email: {person.email}</p>}
       </div>
       <div>
         {(person.schoolName || person.studyTitle || person.studyStartDate || person.studyEndDate)

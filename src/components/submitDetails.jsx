@@ -1,5 +1,8 @@
-export default function SubmitDetails() {
+export default function SubmitDetails({submitInfo}) {
   return (
-    <button className="submitDetailsBtn">Submit Details</button>
+    <button
+    className="submitDetailsBtn"
+    onClick={submitInfo}
+    >Submit Details</button>
   )
 }
