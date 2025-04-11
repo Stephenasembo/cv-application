@@ -1,43 +1,39 @@
+import { useState } from 'react';
 import '../styles/education.css';
 import EditDetails from './editDetails';
 import SubmitDetails from './submitDetails';
+import Input from './input';
 
 export default function Education({educationInfo, updateEducationInfo}) {
-  function updateSchool(newSchool) {
-    updateEducationInfo({...educationInfo, schoolName: newSchool});
+  const [educationInfoObj, setEducationInfoObj] = useState({});
+
+  function updatePerson(){
+    updateEducationInfo({...educationInfo, ...educationInfoObj})
   }
-  function updateTitle(newTitle) {
-    updateEducationInfo({...educationInfo, studyTitle: newTitle});
-  }
-  function updateStart(newDate) {
-    updateEducationInfo({...educationInfo, studyStartDate: newDate});
-  }
-  function updateEnd(newDate) {
-    updateEducationInfo({...educationInfo, studyEndDate: newDate});
-  }
+
   return (
     <section className='educationInfo'>
       <h2>Educational information</h2>
       <label>
         School Name: 
-        <input type='text' onChange={(e) => updateSchool(e.target.value)}/>
+        <Input type='text' obj={educationInfoObj} property='schoolName' updateObj={setEducationInfoObj}/>
       </label>
       <label>
         Title of Study: 
-        <input type='text' onChange={(e) => updateTitle(e.target.value)}/>
+        <Input type='text' obj={educationInfoObj} property='studyTitle' updateObj={setEducationInfoObj}/>
       </label>
       <div className='studyDuration'>
         <label>
           Study Start Date: 
-          <input type='date' onChange={(e) => updateStart(e.target.value)}/>
+          <Input type='date' obj={educationInfoObj} property='studyStartDate' updateObj={setEducationInfoObj}/>
         </label>
         <label className='end'>
           Study End Date: 
-          <input type='date' onChange={(e) => updateEnd(e.target.value)}/>
+          <Input type='date' obj={educationInfoObj} property='studyEndDate' updateObj={setEducationInfoObj}/>
         </label>
       </div>
       <div>
-        <SubmitDetails />
+        <SubmitDetails submitInfo={updatePerson}/>
         <EditDetails />
       </div>
     </section>

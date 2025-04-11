@@ -1,23 +1,15 @@
+import { useState } from 'react';
 import '../styles/experience.css';
 import EditDetails from './editDetails';
 import SubmitDetails from './submitDetails';
+import Input from './input';
 
 
 export default function Experience({experience, updateExperience}) {
-  function updateCompany(newCompany) {
-    updateExperience({...experience, companyName: newCompany});
-  }
-  function updatePosition(newPosition) {
-    updateExperience({...experience, position: newPosition});
-  }
-  function updateResponsibilities(newResponsibilities) {
-    updateExperience({...experience, responsibilities: newResponsibilities});
-  }
-  function updateWorkStart(newDuration) {
-    updateExperience({...experience, workStart: newDuration});
-  }
-  function updateWorkEnd(newDuration) {
-    updateExperience({...experience, workEnd: newDuration});
+  const [experienceObj, setExperienceObj] = useState({});
+
+  function updatePerson(){
+    updateExperience({...experience, ...experienceObj})
   }
 
   return (
@@ -25,28 +17,28 @@ export default function Experience({experience, updateExperience}) {
       <h2>Practical Experience</h2>
       <label>
         Company Name: 
-        <input type='text' onChange={(e) => updateCompany(e.target.value)}/>
+        <Input type='text' obj={experienceObj} property='companyName' updateObj={setExperienceObj}/>
       </label>
       <label>
         Position Title: 
-        <input type='text' onChange={(e) => updatePosition(e.target.value)}/>
+        <Input type='text' obj={experienceObj} property='position' updateObj={setExperienceObj}/>
       </label>
       <label>
         Main Responsibilities: 
-        <input type='text' onChange={(e) => updateResponsibilities(e.target.value)}/>
+        <Input type='text' obj={experienceObj} property='responsibilities' updateObj={setExperienceObj}/>
       </label>
       <div className='workDuration'>
         <label>
           Work Start Date
-          <input type='date' onChange={(e) => updateWorkStart(e.target.value)}/>
+          <Input type='date' obj={experienceObj} property='workStart' updateObj={setExperienceObj}/>
         </label>
         <label className='end'>
           Work End Date
-          <input type='date' onChange={(e) => updateWorkEnd(e.target.value)}/>
+          <Input type='date' obj={experienceObj} property='workEnd' updateObj={setExperienceObj}/>
         </label>
       </div>
       <div>
-        <SubmitDetails />
+        <SubmitDetails submitInfo={updatePerson}/>
         <EditDetails />
       </div>
     </section>
