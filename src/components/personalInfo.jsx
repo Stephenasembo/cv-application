@@ -6,10 +6,13 @@ import { useState } from 'react';
 
 export default function PersonalInfo({infoObj, setInfoObj}) {
   const [personalInfoObj, setPersonalInfoObj] = useState({});
+  const [keyCounter, setKeyCounter] = useState(0);
 
   // Update the person object with personal details
   function updateInfo() {
     setInfoObj({...infoObj, ...personalInfoObj});
+    // Clear input after submission
+    setKeyCounter(keyCounter + 1);
   }
 
   return (
@@ -17,15 +20,33 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
       <h2>Personal information</h2>
       <label>
         Name: 
-        <Input type='text' obj={personalInfoObj} property='name' updateObj={setPersonalInfoObj}/>
+        <Input
+        key={'name' + keyCounter}
+        type='text'
+        obj={personalInfoObj}
+        property='name'
+        updateObj={setPersonalInfoObj}
+        />
       </label>
       <label>
         Phone Number: 
-        <Input type='tel' obj={personalInfoObj} property='phone' updateObj={setPersonalInfoObj}/>
+        <Input
+        key={'phone' + keyCounter}
+        type='tel'
+        obj={personalInfoObj}
+        property='phone'
+        updateObj={setPersonalInfoObj}
+        />
       </label>
       <label>
         Email Address: 
-        <Input type='email' obj={personalInfoObj} property='email' updateObj={setPersonalInfoObj}/>
+        <Input
+        key={'email' + keyCounter}
+        type='email'
+        obj={personalInfoObj}
+        property='email'
+        updateObj={setPersonalInfoObj}
+        />
       </label>
       <div>
         <SubmitDetails submitInfo={updateInfo}/>

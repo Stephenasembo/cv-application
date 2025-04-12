@@ -7,9 +7,11 @@ import Input from './input';
 
 export default function Experience({experience, updateExperience}) {
   const [experienceObj, setExperienceObj] = useState({});
+  const [keyCounter, setKeyCounter] = useState(0);
 
   function updatePerson(){
-    updateExperience({...experience, ...experienceObj})
+    updateExperience({...experience, ...experienceObj});
+    setKeyCounter(keyCounter + 1);
   }
 
   return (
@@ -17,24 +19,54 @@ export default function Experience({experience, updateExperience}) {
       <h2>Practical Experience</h2>
       <label>
         Company Name: 
-        <Input type='text' obj={experienceObj} property='companyName' updateObj={setExperienceObj}/>
+        <Input
+        key={'companyName' + keyCounter}
+        type='text'
+        obj={experienceObj}
+        property='companyName'
+        updateObj={setExperienceObj}
+        />
       </label>
       <label>
         Position Title: 
-        <Input type='text' obj={experienceObj} property='position' updateObj={setExperienceObj}/>
+        <Input
+        key={'position' + keyCounter}
+        type='text'
+        obj={experienceObj}
+        property='position'
+        updateObj={setExperienceObj}
+        />
       </label>
       <label>
         Main Responsibilities: 
-        <Input type='text' obj={experienceObj} property='responsibilities' updateObj={setExperienceObj}/>
+        <Input
+        key={'responsibilities' + keyCounter}
+        type='text'
+        obj={experienceObj}
+        property='responsibilities'
+        updateObj={setExperienceObj}
+        />
       </label>
       <div className='workDuration'>
         <label>
           Work Start Date
-          <Input type='date' obj={experienceObj} property='workStart' updateObj={setExperienceObj}/>
+          <Input
+          key={'workStart' + keyCounter}
+          type='date'
+          obj={experienceObj}
+          property='workStart'
+          updateObj={setExperienceObj}
+          />
         </label>
         <label className='end'>
           Work End Date
-          <Input type='date' obj={experienceObj} property='workEnd' updateObj={setExperienceObj}/>
+          <Input
+          key={'workEnd' + keyCounter}
+          type='date'
+          obj={experienceObj}
+          property='workEnd'
+          updateObj={setExperienceObj}
+          />
         </label>
       </div>
       <div>
