@@ -5,11 +5,24 @@ import SubmitDetails from './submitDetails';
 import Input from './input';
 
 export default function Education({educationInfo, updateEducationInfo}) {
-  const [educationInfoObj, setEducationInfoObj] = useState({});
+  const [educationInfoObj, setEducationInfoObj] = useState({
+    schoolName: '',
+    studyTitle: '',
+    studyStartDate: '',
+    studyEndDate: '',
+  });
   const [keyCounter, setKeyCounter] = useState(0);
 
   function updatePerson(){
-    updateEducationInfo({...educationInfo, ...educationInfoObj})
+    updateEducationInfo({...educationInfo, ...educationInfoObj});
+    // Clear input after submission
+    setEducationInfoObj({
+      schoolName: '',
+      studyTitle: '',
+      studyStartDate: '',
+      studyEndDate: '',
+    })
+    // Create a new input element
     setKeyCounter(keyCounter + 1);
   }
 

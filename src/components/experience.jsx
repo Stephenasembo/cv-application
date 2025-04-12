@@ -6,11 +6,26 @@ import Input from './input';
 
 
 export default function Experience({experience, updateExperience}) {
-  const [experienceObj, setExperienceObj] = useState({});
+  const [experienceObj, setExperienceObj] = useState({
+    companyName: '',
+    position: '',
+    responsibilities: '',
+    workStart: '',
+    workEnd: '',
+  });
   const [keyCounter, setKeyCounter] = useState(0);
 
   function updatePerson(){
     updateExperience({...experience, ...experienceObj});
+    // Clear input after submission
+    setExperienceObj({
+      companyName: '',
+      position: '',
+      responsibilities: '',
+      workStart: '',
+      workEnd: '',
+    })
+    // Create a new input element
     setKeyCounter(keyCounter + 1);
   }
 

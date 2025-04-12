@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function Input({type, obj, property, updateObj}) {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(obj[property]);
   const newObj = {};
   Object.assign(newObj, obj);
   return(

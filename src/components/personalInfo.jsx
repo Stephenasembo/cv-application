@@ -5,13 +5,23 @@ import SubmitDetails from './submitDetails';
 import { useState } from 'react';
 
 export default function PersonalInfo({infoObj, setInfoObj}) {
-  const [personalInfoObj, setPersonalInfoObj] = useState({});
+  const [personalInfoObj, setPersonalInfoObj] = useState({
+    name: '',
+    phone: '',
+    email: '',
+  });
   const [keyCounter, setKeyCounter] = useState(0);
 
   // Update the person object with personal details
   function updateInfo() {
     setInfoObj({...infoObj, ...personalInfoObj});
     // Clear input after submission
+    setPersonalInfoObj({
+      name: '',
+      phone: '',
+      email: '',
+    })
+    // Create a new input element
     setKeyCounter(keyCounter + 1);
   }
 
