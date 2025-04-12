@@ -25,6 +25,15 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
     setKeyCounter(keyCounter + 1);
   }
 
+  function editPersonalDetails() {
+    setPersonalInfoObj({
+      name: infoObj.name,
+      phone: infoObj.phone,
+      email: infoObj.email,
+    });
+    setKeyCounter(keyCounter + 1);
+  }
+
   return (
     <section className='personalInfo'>
       <h2>Personal information</h2>
@@ -60,7 +69,7 @@ export default function PersonalInfo({infoObj, setInfoObj}) {
       </label>
       <div>
         <SubmitDetails submitInfo={updateInfo}/>
-        <EditDetails />
+        <EditDetails editDetails={editPersonalDetails}/>
       </div>
     </section>
   )

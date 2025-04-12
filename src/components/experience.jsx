@@ -29,6 +29,18 @@ export default function Experience({experience, updateExperience}) {
     setKeyCounter(keyCounter + 1);
   }
 
+  function editExperienceDetails() {
+    setExperienceObj({
+      companyName: experience.companyName,
+      position: experience.position,
+      responsibilities: experience.responsibilities,
+      workStart: experience.workStart,
+      workEnd: experience.workEnd,
+    });
+    setKeyCounter(keyCounter + 1);
+  }
+
+
   return (
     <section className='experience'>
       <h2>Practical Experience</h2>
@@ -86,7 +98,7 @@ export default function Experience({experience, updateExperience}) {
       </div>
       <div>
         <SubmitDetails submitInfo={updatePerson}/>
-        <EditDetails />
+        <EditDetails editDetails={editExperienceDetails} />
       </div>
     </section>
   )

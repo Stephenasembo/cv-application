@@ -8,12 +8,3 @@ export default function EditDetails({editDetails}) {
     </button>
   )
 }
-
-  function editPersonalDetails() {
-    setPersonalInfoObj({
-      name: infoObj.name,
-      phone: infoObj.phone,
-      email: infoObj.email,
-    });
-    setKeyCounter(keyCounter + 1);
-  }

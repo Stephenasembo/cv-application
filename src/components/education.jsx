@@ -26,6 +26,16 @@ export default function Education({educationInfo, updateEducationInfo}) {
     setKeyCounter(keyCounter + 1);
   }
 
+  function editEducationDetails() {
+    setEducationInfoObj({
+      schoolName: educationInfo.schoolName,
+      studyTitle: educationInfo.studyTitle,
+      studyStartDate: educationInfo.studyStartDate,
+      studyEndDate: educationInfo.studyEndDate
+    });
+    setKeyCounter(keyCounter + 1);
+  }
+
   return (
     <section className='educationInfo'>
       <h2>Educational information</h2>
@@ -73,7 +83,7 @@ export default function Education({educationInfo, updateEducationInfo}) {
       </div>
       <div>
         <SubmitDetails submitInfo={updatePerson}/>
-        <EditDetails />
+        <EditDetails editDetails={editEducationDetails}/>
       </div>
     </section>
   )
